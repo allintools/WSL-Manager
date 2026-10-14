@@ -1,0 +1,55 @@
+/* Presentation adapters for the existing WSL UI. The provider remains portable. */
+button.primary,:root[data-theme=light] button.primary,.brand-mark{color:var(--theme-onAccent)}
+button.danger.primary{color:var(--theme-bg)}
+button,input,select,textarea{border-radius:var(--theme-control-radius)}
+input::placeholder,textarea::placeholder{opacity:1}
+button{box-shadow:var(--theme-control-elevation)}
+.app-shell{height:var(--app-height);min-height:0;padding:8px;gap:0}
+.sidebar-frame{position:sticky;top:8px;height:calc(var(--app-height) - 16px);width:255px;flex-shrink:0;z-index:20}
+.sidebar-frame>.sidebar{position:static;height:100%;overflow:auto;background:var(--sidebar);backdrop-filter:blur(var(--theme-glass-blur));border-radius:12px 0 0 12px;width:100%;padding-top:24px}
+.sidebar-toggle{position:absolute;right:-16px;top:50%;transform:translateY(-50%);width:32px;height:32px;padding:0;border-radius:50%;display:grid;place-items:center;background:rgb(var(--theme-sidebar));color:var(--text);border:1px solid var(--line)}
+.sidebar-toggle:hover{background:var(--hover);color:var(--accent)}
+.app-shell>main{background:rgb(var(--theme-canvas) / var(--theme-panel-opacity));border:1px solid var(--line);border-left:0;border-radius:0 12px 12px 0;backdrop-filter:blur(var(--theme-glass-blur));min-width:0;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+.topbar{background:transparent;flex-shrink:0}
+.app-shell>main>.main-content{flex:1;min-height:0;width:100%;margin:0 auto;overflow:auto;overscroll-behavior:contain}
+.main-content{padding-top:32px}
+.panel,.platform-strip,.distro-list,.metric-grid,.menu-content,.activity,dialog{background:var(--panel);border-radius:var(--theme-panel-radius);box-shadow:var(--theme-elevation)}
+.brand-mark{background:var(--accent)}
+.distro-avatar{background:var(--selected);color:var(--accent)}
+.distro-identity{justify-content:flex-start}
+.terminal-area,.terminal-footer{background:var(--theme-terminal);color:var(--theme-terminalText);border-color:var(--line)}
+.terminal-area>.empty{color:var(--text)}
+.linux-desktop{background:transparent}
+.desktop-stage{background:transparent}
+.desktop-window{background:rgb(var(--theme-surface));border-color:var(--line);box-shadow:var(--theme-elevation)}
+.desktop-window-title,.desktop-taskbar,.desktop-status{background:var(--panel)}
+.quiet-dot{background:var(--muted)}
+.status.running,.tabs button.active,.browser-instance{color:var(--theme-accentInk)}
+.browser-chrome{background:rgb(var(--theme-sidebar));height:83px}
+.browser-tabs{background:rgb(var(--theme-canvas))}
+html:has(.browser-chrome) #root{min-height:0}
+html:has(.browser-chrome) .theme-background{display:none}
+@media(max-width:1100px){.sidebar-frame{width:190px}.main-content{padding:24px 22px 64px}}
+@media(max-width:800px){.sidebar-frame{width:160px}.sidebar-frame>.sidebar{padding:20px 8px 12px}.brand{padding-left:0;gap:8px}.brand strong{font-size:12px}.main-content{padding:20px 16px 64px}.metric-grid{grid-template-columns:1fr}.metric+.metric{border-left:0;border-top:1px solid var(--line)}.overview-columns{grid-template-columns:1fr}.distro-row{flex-wrap:wrap;padding:18px 14px;gap:12px}.distro-identity{flex-basis:100%}.platform-strip{flex-wrap:wrap;padding:18px}.platform-count{border-left:0;padding-left:0}.page-heading{flex-wrap:wrap}.settings-grid{grid-template-columns:1fr}.activity{width:min(560px,calc(var(--app-width) - 40px))}.desktop-mode .main-content{padding:10px 10px 0}.browser-route{display:none}.browser-instance{max-width:95px}}
+:root[data-performance=low] .sidebar,:root[data-performance=low] .app-shell>main{backdrop-filter:none}
+:root[data-density=compact] .sidebar-frame{width:190px}
+:root[data-density=narrow] .sidebar-frame{width:150px}
+:root[data-density=narrow] .sidebar{padding:20px 8px 12px}
+:root[data-density=narrow] .brand{padding-left:0;gap:7px}
+:root[data-density=narrow] .brand strong{font-size:12px}
+:root[data-density=narrow] .brand-mark{width:28px;height:28px;flex-shrink:0}
+:root[data-density=narrow] .brand span{font-size:8px;letter-spacing:.5px}
+:root[data-density=narrow] .main-content{padding:20px 16px 64px}
+:root[data-density=narrow] .topbar{padding:0 16px}
+:root[data-density=narrow] .metric-grid,:root[data-density=narrow] .overview-columns,:root[data-density=narrow] .settings-grid{grid-template-columns:1fr}
+:root[data-density=narrow] .metric+.metric{border-left:0;border-top:1px solid var(--line)}
+:root[data-density=narrow] .distro-row,:root[data-density=narrow] .platform-strip,:root[data-density=narrow] .page-heading{flex-wrap:wrap}
+:root[data-density=narrow] .distro-identity{flex-basis:100%}
+:root[data-density=narrow] .platform-count{border-left:0;padding-left:0}
+:root[data-density=narrow] .activity{width:min(560px,calc(var(--app-width) - 40px))}
+.app-shell.sidebar-collapsed .sidebar-frame{width:64px}
+.app-shell.sidebar-collapsed .sidebar{width:100%;padding:18px 8px 12px}
+:root[data-density=narrow] .browser-route{display:none}
+:root[data-density=narrow] .browser-instance{max-width:95px}
+@supports not (backdrop-filter:blur(1px)){.sidebar-frame>.sidebar,.app-shell>main{background:rgb(var(--theme-canvas))}}
+@media(forced-colors:active){.sidebar-frame>.sidebar,.app-shell>main{background:Canvas;color:CanvasText}.panel,button,input{border:1px solid CanvasText}.theme-preset[aria-pressed=true]{outline:2px solid Highlight}}

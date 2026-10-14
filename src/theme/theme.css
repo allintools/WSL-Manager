@@ -1,0 +1,19 @@
+@layer theme, utilities;
+@import "tailwindcss/theme.css" layer(theme) prefix(tw);
+@import "tailwindcss/utilities.css" layer(utilities) prefix(tw);
+
+:root[data-theme]{
+ --bg:var(--theme-bg);--sidebar:rgb(var(--theme-sidebar) / var(--theme-panel-opacity));--panel:rgb(var(--theme-surface) / max(.94,var(--theme-panel-opacity)));--input:var(--theme-input);--text:var(--theme-text);--muted:var(--theme-muted);--line:color-mix(in srgb,var(--theme-border) 50%,transparent);--hover:var(--theme-hover);--selected:var(--theme-selected);--track:var(--theme-track);--accent:var(--theme-accent);--blue:var(--theme-blue);--amber:var(--theme-amber);--danger:var(--theme-danger);
+ --theme-control-radius:7px;--theme-panel-radius:12px;--theme-border-width:1px;--theme-elevation:none;--theme-control-elevation:none;--theme-dialog-backdrop:var(--theme-dialogBackdrop);
+ --app-height:calc(100vh / var(--theme-scale,1));--app-width:calc(100vw / var(--theme-scale,1));
+}
+:root[data-style="3d"]{--theme-elevation:0 10px 30px var(--theme-shadow);--theme-control-elevation:inset 0 1px 0 color-mix(in srgb,var(--text) 15%,transparent),0 2px 4px var(--theme-shadow)}
+html,body{min-width:0;background:var(--bg);color:var(--text)}
+#root{zoom:var(--theme-scale,1);min-height:var(--app-height);isolation:isolate}
+.theme-background{position:fixed;inset:0;pointer-events:none;z-index:-1;background:var(--bg);overflow:hidden}
+.theme-wallpaper{position:absolute;inset:-36px;background-image:var(--theme-wallpaper-image);background-position:center;background-size:cover;opacity:var(--theme-wallpaper-opacity);filter:blur(var(--theme-wallpaper-blur))}
+.theme-wallpaper::after{content:'';position:absolute;inset:0;background:var(--theme-overlay);opacity:var(--theme-wallpaperGuard)}
+.theme-overlay{position:absolute;inset:0;background:var(--theme-overlay);opacity:var(--theme-overlay-opacity)}
+::selection{background:var(--theme-selection);color:var(--text)}
+button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(forced-colors:active){.theme-background{display:none}}

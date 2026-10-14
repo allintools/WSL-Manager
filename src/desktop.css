@@ -1,0 +1,51 @@
+.sidebar-collapsed .sidebar{width:64px;padding:18px 8px 12px;align-items:center}
+.sidebar-collapsed .brand{padding:0;justify-content:center;margin-bottom:22px}
+.sidebar-collapsed .brand>div:not(.brand-mark),.sidebar-collapsed .nav-section,.sidebar-collapsed .sidebar-bottom .connection,.sidebar-collapsed .default-marker,.sidebar-collapsed .distro-nav .truncate{display:none}
+.sidebar-collapsed .sidebar nav,.sidebar-collapsed .sidebar-bottom{width:100%}
+.sidebar-collapsed .sidebar .nav-item{height:42px;justify-content:center;padding:0;font-size:0}
+.sidebar-collapsed .sidebar .nav-item svg{flex-shrink:0}
+.sidebar-collapsed .sidebar .distro-nav{gap:3px;font-size:11px;flex-direction:column}
+.sidebar-collapsed .distro-nav::after{content:attr(data-short);font-size:12px;font-weight:600}
+.desktop-mode .main-content{max-width:none;padding:14px 18px 0}
+.desktop-mode .tabs{margin:0 0 12px;gap:20px}
+.desktop-mode .tabs button{font-size:12px}
+.linux-desktop{height:calc(var(--app-height,100vh) - 139px);min-height:430px;display:flex;flex-direction:column;background:var(--bg);border:1px solid var(--line);border-radius:10px;overflow:hidden;position:relative}
+.desktop-status{height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:var(--panel);border-bottom:1px solid var(--line);font-size:11px;gap:12px;white-space:nowrap}
+.desktop-status>div{overflow:hidden;text-overflow:ellipsis}
+.desktop-status .live-dot{margin-right:6px}
+.desktop-status-actions{display:flex;align-items:center;gap:9px}.desktop-status-actions button{border:0;background:transparent;padding:4px 5px;color:var(--muted);font-size:11px}.desktop-status-actions button:hover{color:var(--text)}
+.desktop-stage{position:relative;flex:1;overflow:hidden;background:radial-gradient(circle at 85% 12%,color-mix(in srgb,var(--accent) 8%,transparent),transparent 34%),linear-gradient(145deg,var(--bg),var(--sidebar))}
+.desktop-launchers{display:flex;flex-wrap:wrap;align-content:flex-start;gap:12px;padding:22px;width:min(560px,100%)}
+.desktop-launchers button{width:76px;min-height:78px;border:1px solid transparent;background:transparent;display:flex;flex-direction:column;gap:7px;color:var(--text);font-size:11px}
+.desktop-launchers button:hover,.desktop-launchers button:focus-visible{background:var(--hover);border-color:var(--line)}
+.desktop-launchers svg{color:var(--accent)}
+.desktop-window{position:absolute;display:flex;flex-direction:column;min-width:360px;min-height:260px;max-width:calc(100% - 8px);max-height:calc(100% - 8px);border:1px solid var(--line);border-radius:9px;background:var(--panel);box-shadow:var(--theme-elevation);overflow:hidden}
+.desktop-window.maximized{min-width:0;max-width:none;max-height:none}
+.desktop-window-title{height:36px;min-height:36px;display:flex;align-items:center;gap:10px;padding:0 6px 0 14px;background:var(--sidebar);border-bottom:1px solid var(--line);font-size:11px;cursor:move;user-select:none;touch-action:none}
+.desktop-window-title strong{font-size:12px;font-weight:600}
+.desktop-window-title .muted{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.desktop-window-controls{margin-left:auto;display:flex;gap:1px}
+.desktop-window-controls button{width:29px;height:27px;border:0;background:transparent;padding:0;color:var(--muted)}
+.desktop-window-controls button:hover{color:var(--text);background:var(--hover)}
+.desktop-window-controls button:last-child:hover{background:var(--danger);color:var(--theme-bg)}
+.desktop-window-body{flex:1;min-height:0;overflow:auto;padding:14px}
+.desktop-window-body .files-page{min-height:100%;display:flex;flex-direction:column}
+.desktop-window-body .terminal-session{height:100%;min-height:0}
+.desktop-window-body .terminal-host{flex:1;min-height:0}
+.desktop-window-body .table-wrap{overflow:auto}
+.desktop-window-body .overview-columns{grid-template-columns:1fr}
+.desktop-resize{position:absolute;right:0;bottom:0;width:16px;height:16px;cursor:nwse-resize;touch-action:none}
+.desktop-resize::after{content:'';position:absolute;right:4px;bottom:4px;width:7px;height:7px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted)}
+.desktop-taskbar{height:47px;min-height:47px;border-top:1px solid var(--line);background:var(--sidebar);display:flex;align-items:center;gap:5px;padding:0 9px;overflow-x:auto}
+.desktop-taskbar button{height:34px;flex-shrink:0;border-color:transparent;background:transparent;font-size:11px;color:var(--text)}
+.desktop-taskbar button:hover{background:var(--hover)}
+.desktop-taskbar button.minimized{color:var(--muted)}
+.desktop-taskbar .desktop-app-menu{width:36px;padding:0;color:var(--accent);border-right:1px solid var(--line);border-radius:0;margin-right:3px}
+.desktop-clock{margin-left:auto;padding:0 10px;color:var(--muted);font-size:11px;white-space:nowrap}
+.desktop-onboarding{margin:auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;max-width:530px;padding:30px}
+.desktop-onboarding-icon{width:58px;height:58px;border:1px solid var(--line);border-radius:14px;display:grid;place-items:center;color:var(--accent);background:var(--panel)}
+.desktop-onboarding h2{font-size:20px}.desktop-onboarding p{line-height:1.75;color:var(--muted);margin:0;overflow-wrap:anywhere}
+.desktop-onboarding label{display:flex;align-items:center;gap:10px;font-size:12px}.desktop-onboarding select{min-width:190px}
+.file-option{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;color:var(--muted);font-size:11px}.file-option input{width:14px;height:14px;min-width:14px;accent-color:var(--accent)}
+.desktop-offline{position:absolute;inset:0;z-index:1000;background:color-mix(in srgb,var(--bg) 88%,transparent);display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;gap:12px;padding:20px}.desktop-offline h3{font-size:17px;margin:0}.desktop-offline p{color:var(--muted);max-width:520px;line-height:1.7;margin:0}
+@media(max-width:1100px){.desktop-mode .main-content{padding:12px 11px 0}.linux-desktop{height:calc(var(--app-height,100vh) - 130px)}.desktop-launchers{gap:4px;padding:14px}.desktop-launchers button{width:65px;min-height:70px}.desktop-window{max-width:calc(100% - 8px)}}

@@ -1,0 +1,1 @@
+{"identifier":"browser-chrome","description":"Controls for the isolated Linux browser","webviews":["browser-chrome-*"],"permissions":["core:default","core:window:allow-set-theme"]}
